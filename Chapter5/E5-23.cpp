@@ -11,6 +11,10 @@ int main() {
 	cout << num1 / num2;
 	} catch (runtime_error err) {
 		cout << err.what() << endl;
+		char c;
+		cin >> c;
+		if (!cin || c == 'n')
+			cout << "over";
 	}
 	return 0;
 }
