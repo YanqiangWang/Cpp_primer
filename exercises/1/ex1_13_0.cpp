@@ -1,5 +1,8 @@
 #include<iostream>
 using namespace std;
+/*
+ * Rewrite the exercise from 1.9
+ */
 
 int main() {
 	int sum = 0;

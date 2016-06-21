@@ -1,5 +1,8 @@
 #include<iostream>
 using namespace std;
+/*
+ * Rewrite the exercise from 1.11
+ */
 
 int main() {
 	int num1, num2;
