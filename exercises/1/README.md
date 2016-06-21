@@ -126,3 +126,8 @@ If there are no duplicated values, when different values input, a new line will 
 
 **Exercise 1.18**  
 ![](https://github.com/YanqiangWang/Cpp_Primer/blob/master/exercises/1/images/ex1_18_console_log_0.png)  
+
+**Exercise 1.24**  
+>Input and Ouput Example:  
+
+![](https://github.com/YanqiangWang/Cpp_Primer/blob/master/exercises/1/images/ex1_24_result.png)
