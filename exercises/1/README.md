@@ -118,3 +118,9 @@ int main() {
 ```
 Error Info:  
 ![](https://github.com/YanqiangWang/Cpp_Primer/blob/master/exercises/1/images/ex1_15_error_info_6.png)  
+**Exercise 1.17**  
+>If the input values are all equal, it will print a line which shows the count of the number you input.  
+If there are no duplicated values, when different values input, a new line will be printed if you click `Enter`.  
+
+**Exercise 1.18**  
+![](https://github.com/YanqiangWang/Cpp_Primer/blob/master/exercises/1/images/ex1_18_console_log_0.png)  
