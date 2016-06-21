@@ -104,6 +104,7 @@ int main() {
 Error Info:  
 ![](https://github.com/YanqiangWang/Cpp_Primer/blob/master/exercises/1/images/ex1_15_error_info_5.png)  
 >Example Code 3:  
+
 ```
 #include<iostream>
 /*
@@ -116,7 +117,8 @@ int main() {
 	return 0;
 }
 ```
-Error Info:  
+>Error Info:  
+
 ![](https://github.com/YanqiangWang/Cpp_Primer/blob/master/exercises/1/images/ex1_15_error_info_6.png)  
 **Exercise 1.17**  
 >If the input values are all equal, it will print a line which shows the count of the number you input.  
