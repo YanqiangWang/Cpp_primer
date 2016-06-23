@@ -3,11 +3,11 @@ Contents
 
 * [Chapter 1. Getting Started](https://github.com/YanqiangWang/Cpp_Primer/tree/master/exercises/1)
 * Part I: The Basics
-  * Chapter 2. Variables and Basic Types
-  * Chapter 3. Strings, Vectors and Arrays
-  * Chapter 4. Expressions
-  * Chapter 5. Statements
-  * Chapter 6. Functions
+  * [Chapter 2. Variables and Basic Types](https://github.com/YanqiangWang/Cpp_Primer/tree/master/exercises/2)
+  * [Chapter 3. Strings, Vectors and Arrays](https://github.com/YanqiangWang/Cpp_Primer/tree/master/exercises/3)
+  * [Chapter 4. Expressions](https://github.com/YanqiangWang/Cpp_Primer/tree/master/exercises/4)
+  * [Chapter 5. Statements](https://github.com/YanqiangWang/Cpp_Primer/tree/master/exercises/5)
+  * [Chapter 6. Functions](https://github.com/YanqiangWang/Cpp_Primer/tree/master/exercises/6)
   * Chapter 7. Classes
 * Part II: The C++ Library
   * Chapter 8. The IO Library
