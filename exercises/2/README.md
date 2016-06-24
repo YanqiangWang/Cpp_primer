@@ -20,7 +20,7 @@ std::cout << u - i << std::endl; // 0
 ```
 
 **Exercise 2.4**  
-![]()  
+![](https://github.com/YanqiangWang/Cpp_primer/blob/master/exercises/2/images/ex2_4_test.png)  
 
 **Exercise 2.5**  
 >(a) 'a', L'a', "a", L"a"  
@@ -281,4 +281,4 @@ decltype(r) d = i;
 ```
 
 **Exercise 2.39**  
-![]
+![](https://github.com/YanqiangWang/Cpp_primer/blob/master/exercises/2/images/ex2_39_error_info.png)
