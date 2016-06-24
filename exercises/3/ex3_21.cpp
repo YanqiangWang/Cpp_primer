@@ -1,12 +1,12 @@
 #include <iostream>
-#include <string>
 #include <vector>
 using namespace std;
 
-void print_value(vector<int>& v)
+template <typename T>
+void print_value(vector<T>& v)
 {
-	for (int i : v)
-		cout << i << " ";
+	for (auto it = v.cbegin(); it != v.cend(); ++it)
+		cout << *it << " ";
 	cout << endl;
 }
 
@@ -30,12 +30,9 @@ int main()
 	cout << "v5 size: " << v5.size() << endl;
 	print_value(v5);
 	cout << "v6 size: " << v6.size() << endl;
-	for (int i = 0; i < v6.size(); i++)
-		cout << v6[i] << " _";
-	cout << endl;
+	print_value(v6);
 	cout << "v7 size: " << v7.size() << endl;
-	for (string i : v7)
-		cout << i << " ";
-	cout << endl;
+	print_value(v7);
+	
 	return 0;
 }
