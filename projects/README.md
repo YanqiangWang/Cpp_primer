@@ -1,4 +1,5 @@
-**Shiyanlou Project Assignments: **  
+**Shiyanlou Project Assignments:**  
+---
 **Week 1:**  
 >Write a program of course management for Shiyanlou platform. It requires those functions showing below:  
 
@@ -10,4 +11,5 @@
 6. If `4` input, delete last course. Ifthere are no course at all, print error message.
 7. If `5` input, exit.  
 
-[Shiyanlou Platform](https://www.shiyanlou.com/courses/405)
+---
+[Shiyanlou Platform](https://www.shiyanlou.com/courses/405)  
