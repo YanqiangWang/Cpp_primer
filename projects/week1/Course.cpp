@@ -12,7 +12,7 @@ void delete_course(course_type&);
 
 int main()
 {
-	// add course to the list
+	// add courses to the list
 	course_type course;
 	vector<string> s = {"Linux", "C++", "HTML", "NodeJS", "Shell", "Python"};
 	for (int i = 0; i < s.size(); ++i) {
@@ -23,7 +23,7 @@ int main()
 		course.push_back(c);
 	}
 	
-	// circular input
+	// circularly input
 	int ins;
 	help_info();
 	while (cin >> ins) {
@@ -55,12 +55,12 @@ void longest_name(course_type& course)
 {
 	cout << "the course(s) with the longest name: " << endl;
 	int max_length = 0;
-	// get the max length of course names
+	// get the maximum length of course names
 	for (auto i : course)
 		if (i.course_name.size() > max_length)
 			max_length = i.course_name.size();
 	
-	// print courses with the longest name
+	// print courses info with the longest name
 	for (auto i : course)
 		if (i.course_name.size() == max_length)
 			cout << i.course_ID << " " << i.course_name << endl;

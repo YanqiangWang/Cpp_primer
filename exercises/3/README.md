@@ -43,3 +43,56 @@ vector<int> ivec{42, 42, 42, 42, 42, 42, 42, 42, 42, 42};
 **Exercise 3.26**  
 >`beg+end` is meaningless.  
 
+**Exercise 3.27**  
+```
+unsigned buf_size = 1024;
+(a) int ia[buf_size]; // illegal, the dimension value must be a constant expression.
+(b) int ia[4 * 7 - 14]; // legal
+(c) int ia[txt_size()]; // illegal, the dimension value must be a constant expression.
+(d) char st[11] = "fundamental"; // illegal, the string's size is 12
+```
+
+**Exercise 3.28**  
+```
+string sa[10]; // ""
+int ia[10]; // 0
+int main()
+{
+    string sa2[10]; // ""
+    int ia2[10]; // undefined
+}
+```
+
+**Exercise 3.29**  
+>Size is fixed at compiling time.  
+No API as that of vector.  
+Bug prone.  
+
+**Exercise 3.30**  
+```
+constexpr size_t array_size = 10;
+int ia[array_size];
+for (size_t ix = 1; ix <= array_size; ++ix) // the index can't be as large as array_size
+    ia[ix] = ix;
+```
+
+**Exercise 3.33**  
+>the value in this array is unpredictable.  
+
+**Exercise 3.34**  
+>Any legal value.  
+
+**Exercise 3.37**  
+```
+const char ca[] = {'h', 'e', 'l', 'l', 'o'};
+const char *cp = ca;
+while(*cp) {
+    cout << *cp << endl;
+    ++cp;
+}
+// Output: "hello" and many rubbish message
+// the loop can't terminate correctly
+```
+
+**Exercise 3.38**  
+>[Why can't we add pointers](http://stackoverflow.com/questions/2935038/why-cant-i-add-pointers)  

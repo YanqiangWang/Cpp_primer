@@ -1,4 +1,5 @@
-**Assignment of Week One:**  
+**Shiyanlou Project Assignments: **  
+**Week 1:**  
 >Write a program of course management for Shiyanlou platform. It requires those functions showing below:  
 
 1. Directive can be circularly input after the program starting up.
@@ -9,4 +10,4 @@
 6. If `4` input, delete last course. Ifthere are no course at all, print error message.
 7. If `5` input, exit.  
 
-[study notes](http://www.cnblogs.com/yanqiang/p/5616016.html)  
+[Shiyanlou Platform](https://www.shiyanlou.com/courses/405)
