@@ -129,6 +129,7 @@ string p1 = s + (s[s.size() - 1] == 's' ? "" : "s");
 finalgrade = (grade > 90) ? "high pass" : (grade < 60) ? "fail" : "pass";
 ```
 >the same as:  
+
 ```
 finalgrade = ((grade > 90) ? "high pass" : (grade < 60)) ? "fail" : "pass";
 ```
@@ -165,6 +166,7 @@ unsigned long ul1 = 3, ul2 = 7;
 
 **Exercise 4.31**  
 >The prefix version avoids unnecessary work. It increments the value and returns the incremented version.The postfix operator must store the original value so that it can return the unincremented value as its result.  
+
 ```
 for(vector<int>::size_type ix = 0; ix != ivec.size(); ++ix, --cnt)
     ivec[ix] = cnt;
@@ -209,4 +211,4 @@ i *= static_cast<int>(d);
 ```
 
 **Exercise 4.38**  
->j/i is an int, converted to double and assigned to slope.
+>`j / i` is an int, converted to double and assigned to slope.
