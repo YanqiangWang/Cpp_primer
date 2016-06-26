@@ -1,5 +1,5 @@
 **Assignment of week 2:**  
->Optimize the codes of week one's project£º  
+>Optimize the codes of week one's project:  
 
 1. Utilize `switch` in the judgement of user input.
 2. If `5` input, use `break` to exit the loop.
