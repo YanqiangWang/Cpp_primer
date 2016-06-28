@@ -1,4 +1,5 @@
 *.exe
+*.o
 data
 result
 test.cpp

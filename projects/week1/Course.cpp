@@ -43,7 +43,7 @@ int main()
 void delete_course(course_type& course)
 {
 	if(!course.empty()){
-		cout << (*(course.end() - 1)).course_name;
+		cout << course.back().course_name;
 		course.pop_back();
 		cout << " has been deleted!" << endl;
 	} else {
