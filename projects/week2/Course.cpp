@@ -67,12 +67,12 @@ void longest_name(course_type& course)
 	cout << "the course(s) with the longest name: " << endl;
 	int max_length = 0;
 	// get the maximum length of course names
-for (auto i : course)
+	for (auto i : course)
 		if (i.course_name.size() > max_length)
 			max_length = i.course_name.size();
 
 	// print courses info with the longest name
-for (auto i : course)
+	for (auto i : course)
 		if (i.course_name.size() == max_length)
 			cout << i.course_ID << " " << i.course_name << endl;
 }
@@ -80,6 +80,6 @@ for (auto i : course)
 void print_course(course_type& course)
 {
 	cout << "course IDs and names:" << endl;
-for (auto i : course)
+	for (auto i : course)
 		cout << i.course_ID << " " << i.course_name << endl;
 }
