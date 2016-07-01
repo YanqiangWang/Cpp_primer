@@ -23,7 +23,7 @@ double square(double x) {
 **Exercise 6.6**  
 >local variable: Variables defined inside a block;  
 parameter: Local variables declared inside the function parameter list;  
-local static variable: local static variable£¨object£© is initialized before the first time execution passes through the object¡¯s definition.Local statics are not destroyed when a function ends; they are destroyed when the program terminates.  
+local static variable: local static variableÂ£Â¨objectÂ£Â© is initialized before the first time execution passes through the objectÂ¡Â¯s definition.Local statics are not destroyed when a function ends; they are destroyed when the program terminates.  
 
 **Exercise 6.13**  
 >void f(T) pass the argument by value. nothing the function does to the parameter can affect the argument. void f(T&) pass a reference, will be bound to whatever T object we pass.  
@@ -90,7 +90,7 @@ void print_10(const int (&ia)[10]) {}
 >Depends on the type of elements of `initializer_list`. When the type is POD(Plain Old Data) Type, reference is unnecessary. Because POD is cheap to copy(such as `int`). Otherwise, Using reference(`const`) is the better choice.  
 
 **Exercise 6.30**  
-![]
+![](https://github.com/YanqiangWang/Cpp_primer/blob/master/exercises/6/images/ex6_30_error_info.png)
 
 **Exercise 6.31**  
 >when you can find the preexited object that the reference refered.  
