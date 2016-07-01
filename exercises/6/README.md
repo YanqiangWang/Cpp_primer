@@ -29,14 +29,12 @@ local static variable: local static variable£¨object£© is initialized before the
 >void f(T) pass the argument by value. nothing the function does to the parameter can affect the argument. void f(T&) pass a reference, will be bound to whatever T object we pass.  
 
 **Exercise 6.14**  
-a parameter should be a reference type:  
 ```
+// a parameter should be a reference type:
 void reset(int& num) {
     num = 0;
 }
-```
-a parameter should not be a reference:  
-```
+// a parameter should not be a reference:
 void print(vector<int>::iterator begin, vector<int>::iterator end) {
     for (vector<int>::iterator iter = begin; iter != end; ++iter)
         cout << *iter << endl;
@@ -107,3 +105,77 @@ case 2 : if the argument is negative, recursion would never stop. As a result, a
 **Exercise 6.35**  
 >the recursive function will always use `val` as the parameter. a recursion loop would happen.  
 
+**Exercise 6.39**  
+```
+// (a) illegal
+int calc(int, int);
+int calc(const int, const int);
+// (b) illegal
+int get();
+double get();
+// (c) legal
+int *reset(int *);
+double *reset(double *);
+```
+
+**Exercise 6.40**  
+>(b)  
+
+**Exercise 6.41**  
+```
+char *init(int ht, int wd = 80, char bckgrnd = ' ');
+// (a) illegal, the parameters are not matching
+init();
+// (b) legal
+init(24.10);
+// (c) legal, but not match, 'wd' would be setting to '*'
+init(14, '*');
+```
+
+**Exercise 6.43**  
+>Both two should put in a header.  
+(a) is an inline function.  
+(b) is the declaration of useful function.  
+we always put them in the header.  
+
+**Exercise 6.46**  
+>No. Because the return type is not a constant expression.  
+
+**Exercise 6.48**  
+>This loop let user input a word all the way until the word is sought.  
+It isn't a good use of assert. because if user begin to input a word, the `cin` would be always have content. so the `assert` would be always `true`. It is meaningless. using `assert(s == sought)` is more better.  
+
+**Exercise 6.49**  
+candidate function:  
+>Set of functions that are considered when resolving a function call. (all the functions with the name used in the call for which a declaration is in scope at the time of the call.)  
+
+viable function:  
+>Subset of the candidate functions that could match a given call. It have the same number of parameters as arguments to the call, and each argument type can be converted to the corresponding parameter type.  
+
+**Exercise 6.50**  
+```
+// (a) f(2.56, 42) illegal
+// (b) f(42)
+void f(int);
+// (c) f(42, 0)
+void f(int, int);
+// (d) f(2.56, 3.14)
+void f(double, double = 3.14);
+```
+
+**Exercise 6.52**  
+>(a) Match through a promotion  
+(b) Arithmetic type conversion  
+
+**Exercise 6.53**  
+```
+// (a) legal
+int calc(int&, int&);
+int calc(const int&, const int&);
+// (b) legal
+int calc(char*, char*);
+int calc(const char*, const char*);
+// (c) illegal
+int calc(char*, char*);
+int calc(char* const, char* const);
+```
