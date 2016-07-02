@@ -8,12 +8,12 @@ Contents
   * [Chapter 4. Expressions](https://github.com/YanqiangWang/Cpp_Primer/tree/master/exercises/4)
   * [Chapter 5. Statements](https://github.com/YanqiangWang/Cpp_Primer/tree/master/exercises/5)
   * [Chapter 6. Functions](https://github.com/YanqiangWang/Cpp_Primer/tree/master/exercises/6)
-  * Chapter 7. [Classes](https://github.com/YanqiangWang/Cpp_Primer/tree/master/exercises/7)
+  * [Chapter 7. Classes](https://github.com/YanqiangWang/Cpp_Primer/tree/master/exercises/7)
 * Part II: The C++ Library
-  * Chapter 8. [The IO Library](https://github.com/YanqiangWang/Cpp_Primer/tree/master/exercises/8)
-  * Chapter 9. [Sequential Containers](https://github.com/YanqiangWang/Cpp_Primer/tree/master/exercises/9)
-  * Chpater 10. [Generic Algorithms](https://github.com/YanqiangWang/Cpp_Primer/tree/master/exercises/10)
-  * Chapter 11. [Associative Containers](https://github.com/YanqiangWang/Cpp_Primer/tree/master/exercises/11)
+  * [Chapter 8. The IO Library](https://github.com/YanqiangWang/Cpp_Primer/tree/master/exercises/8)
+  * [Chapter 9. Sequential Containers](https://github.com/YanqiangWang/Cpp_Primer/tree/master/exercises/9)
+  * [Chpater 10. Generic Algorithms](https://github.com/YanqiangWang/Cpp_Primer/tree/master/exercises/10)
+  * [Chapter 11. Associative Containers](https://github.com/YanqiangWang/Cpp_Primer/tree/master/exercises/11)
   * Chapter 12. Dynamic Memory
 * Part III: Tools for Class Authors
   * Chapter 13. Copy Control
