@@ -1,69 +1,49 @@
-**第七章**  
-重要知识点：  
-**7.1 定义抽象数据类型**  
-成员函数的声明必须在类的内部，定义可以在外部，定义在类内部的函数是隐式的`inline`函数。非成员函数，声明和定义都在外部。  
-`this`是一个常量指针，如：`this->bookNo`。  
-**`const`成员函数**：  
-`this`的类型是指向类类型非常量版本的常量指针，即顶层`const`，底层非`const`，则不能绑定到常量对象上，类型是`Sales_data *const`，我们应该将其改为`const Sales_data *const`以增加灵活性。  
-将`const`放在参数列表的后面，这样的函数称为常量成员函数。  
-常量成员函数不能改变调用它的对象的内容。常量对象，及其对象、指针都只能调用常量成员函数。  
-编译器首先编译成员的声明，之后编译成员函数体。所以成员变量可以出现在后面。  
-非成员函数如果是类接口的组成部分，则这些函数的声明应该和类在同一个头文件里。  
+**Exercise 7.8**  
+>Define read's Sales_data parameter as plain reference since it's intended to change the revenue's value.  
+Define print's Sales_data parameter as a reference to const since it isn't intended to change any member's value of this object.  
+
+**Exercise 7.10**  
+>the condition of the if statement would read two Sales_data object at one time.  
+
+**Exercise 7.14**  
 ```
-ostream &print(ostream &os, const Sales_data &item) {
-    os << item.isbn() << " " << item.units_sold << " "
-       << item.revenue << " " << item.avg_price();
-    return os;
-}
+Sales_data():units_sold(0), revenue(0.0) {}
 ```
-IO类不能拷贝，只能传引用，而且读写会改变流内容，所以不能是`const`，该输出函数中无换行，减少对格式的控制，交由用户处理。  
-拷贝类的对象实际上拷贝的是对象的数据成员。  
-**构造函数**不能被声明为`const`的，当我们创建类的一个`const`对象时，直到构造函数完成初始化过程，对象才能真正取得其常量属性，因此构造函数在`const`对象的构造函数中可以向其写值。  
-如果已经定义了其他的构造函数，那么也必须定义一个默认构造函数，用`= default`；  
-如果定义在块中的内置类型或复合类型（如数组和指针）的对象被默认初始化，则它们的值是未定义的；  
-如果类中包含一个其他类类型的成员且这个成员的类型没有默认构造函数，那么编译器将无法初始化该成员。  
-```
-Sales_data() = default;
-Sales_data(const std::string &s): bookNo(s) {}
-```
-`= default`可以和声明一起出现在类的内部，也可以作为定义出现在类的外部。  
-先用初始化列表初始化，如果没有则用构造函数体初始化，最后才用默认初始化。  
-如果拷贝时如果不定义操作，编译器将对每个成员执行拷贝，赋值和销毁操作。  
-当类需要分配类对象之外的资源时，合成的版本常常会失效，比如动态内存，使用`vector`和`string`的类能够避免分配和释放内存带来的复杂性，其拷贝，赋值和销毁的合成版本能够正常工作。  
-**7.2 访问控制与封装**  
-`struct`默认成员是`public`的，`class`默认成员是`private`的，这是唯一的区别。  
-**友元**不是类的成员，不受它所在区域访问控制级别的约束。最好在类定义开始或者结束前的位置集中声明友元。  
-友元的声明只是指定了访问权限，并非通常意义上的函数声明。如果希望用户调用友元函数，则需要在类外在专门声明或定义一次。  
-**7.3 类的其他特性**  
-可以在类中自定义某种类型的别名，一般定义成`public`成员向用户隐藏实现细节。  
-可以把`inline`作为声明的一部分显式声明成员函数内联，也可以在类的外部用`inline`修饰函数的定义，推荐用后者。`inline`函数应当与类在同一个头文件中。  
-给数据成员加`mutable`，则即使是`const`成员函数也可以改变它的值。  
-类内初始值必须用`=`或者花括号的形式。  
-一个`const`成员函数如果以引用方式返回`*this`，那么它的返回类型是常量引用。  
-当一个成员调用另一个成员时，`this`指针在其中隐式传递。  
-```
-Sales_data item1;
-class Sales_data item1; // C风格，等价于上行，也可以用struct
-```
-可以只声明而不定义类，这叫**不完全类型**，然后可以定义它的指针或引用，也可以声明以不完全类型为参数或者返回类型的函数。  
-但类必须首先被定义，才能通过引用或者指针访问其成员。  
-一个类的成员类型不能是自己，但可以是它的指针或引用。  
-```
-class Link_screen{
-    Screen window;
-    Link_screen *next;
-    Link_screen *prev;
-};
-```
-类可以把其他类或者其他类的成员函数声明为友元。友元函数可以定义在类的内部，这样的函数是隐式内联的。友元关系不存在传递性。  
-若要声明`Window_mgr`类的`clear()`函数为`Screen`类的友元函数，则应该：  
-首先定义`Window_mgr`类，其中声明`clear`函数，但不能定义；  
-然后定义`Screen`类，包含对`clear`的友元声明；  
-最后定义`clear`。  
-**7.4 类的作用域**  
-函数的返回类型出现在函数名之前，所以当成员函数定义在类的外部时，返回类型中使用的名字都位于类的作用域之外，所以需要处理一下返回类型，例如：  
-```
-Window_mgr::ScreenIndex Window_mgr::addScreen(const Screen &s) {}
-```
-如果在类外已经定义了某种类型别名，那么在类中不能再次定义此别名。  
-名字查找的最后一步，类定义之前的全局作用域以及成员函数外部定义之前的全局作用域都在考虑范围里。  
+
+**Exercise 7.16**  
+>There are no restrictions on how often an access specifier may appear.The specified access level remains in effect until the next access specifier or the end of the class body.  
+The members which are accessible to all parts of the program should define after a public specifier.  
+The members which are accessible to the member functions of the class but are not accessible to code that uses the class should define after a private specifier.  
+
+**Exercise 7.17**  
+>The only difference between using `class` and using `struct` to define a class is the default access level. (`class`: private, `struct`: public)  
+
+**Exercise 7.18**  
+>encapsulation is the separation of implementation from interface. It hides the implementation details of a type. (In C++, encapsulation is enforced by putting the implementation in the private part of a class)  
+
+**Important advantages:**  
+
+* User code cannot inadvertently corrupt the state of an encapsulation object.  
+* The implementation of an encapsulated class can change over time without requiring changes in user-level code.  
+
+**Exercise 7.19**  
+>public:  
+constructors, `get_name()`, `get_address()`;  
+private:  
+`name`, `address`  
+
+**Exercise 7.20**  
+>friend is a mechanism by which a class grants access to its nonpublic members. They have the same rights as members.  
+
+**Pros:**  
+
+* the useful functions can refer to class members in the class scope without needing to explicitly prefix them with the class name.
+* you can access all the nonpublic members conveniently.
+* sometimes, more readable to the users of class.
+
+**Cons:**  
+
+* lessens encapsulation and therefore maintainability.
+* code verbosity, declarations inside the class, outside the class.
+
+**Exercise 7.
