@@ -23,7 +23,7 @@ double square(double x) {
 **Exercise 6.6**  
 >local variable: Variables defined inside a block;  
 parameter: Local variables declared inside the function parameter list;  
-local static variable: local static variable£(object£) is initialized before the first time execution passes through the object's definition.Local statics are not destroyed when a function ends; they are destroyed when the program terminates.  
+local static variable: local static variable(object) is initialized before the first time execution passes through the object's definition.Local statics are not destroyed when a function ends; they are destroyed when the program terminates.  
 
 **Exercise 6.13**  
 >void f(T) pass the argument by value. nothing the function does to the parameter can affect the argument. void f(T&) pass a reference, will be bound to whatever T object we pass.  
